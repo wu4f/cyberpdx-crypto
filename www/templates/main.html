@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+	{% if 'username' in session %}
+		<p>Logged in as: {{session['username']}}</p>
+	{% else %}
+	<p>This is the scoring site for the cryptographic challenges of CyberDiscovery 2015.</p>
+	<p>Your user login is the same as your team's GMail login (i.e. cyberdiscoverypdx1, cyberdiscoverypdx2, etc.).</p>
+	<p>Your password is also the same as your team's GMail password.</p>
+		<p>Please <a href="{{url_for('login')}}">login</a></p>
+	{% endif %}
+	{% with messages = get_flashed_messages() %}
+			{% for message in messages %}
+{{message}}
+			{% endfor %}
+		</pre>
+	{% endwith %}
+{% endblock %}
+

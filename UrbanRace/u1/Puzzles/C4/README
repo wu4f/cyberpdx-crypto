@@ -1,0 +1,20 @@
+# Sadly this process is not fully automated.
+# But it is getting there.
+
+Step 1:
+  Create the graph manually (using yEd for example)
+  Save the public key version as MessageBlank.graphml
+    It will need to have each node labelled as N0, N1, ... N#
+  Enter in the graph into simple text format... see an example for illustration.
+    Call it graphInput.txt
+
+Step 2:
+  Modify the run.sh to use the password you want.
+
+Step 3:
+  Edit the replace.sh program to use the Enc output from the worksheet.
+  (A bit of a pain but not too bad)  Could be made cleaner.
+  This should mostly do it.
+
+Step 4:
+  yEd

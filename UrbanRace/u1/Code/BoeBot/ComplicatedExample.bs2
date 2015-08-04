@@ -1,0 +1,115 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' Author: Christian Duncan
+' A very simple RSA Encryption program
+' It is not very secure because it uses only about 8-bit
+' encryption as opposed to 1024-bit but it still illustrates
+' how it all works!
+' There is much tweaking needed to use this program, but
+' feel free to alter it.  (We will cover it in class - hopefully!)
+
+#DEFINE UseDebugIn = 0   ' 1 means use debugin, 0 means don't (use data)
+#DEFINE OutputInASCII = 0 ' 1 means use ASCII, 0 means use DECIMAL
+#DEFINE UseVerySmallN = 1 ' 1 means N is < 256, 0 means can be near 65K
+
+#IF UseDebugIn = 0 #THEN
+' Data Storage
+'   The actual storage values.
+'   On my Mac DEBUGIN doesn't work very well
+'   with the PBASIC STAMP Editor (annoying!)
+'   But I can just hardcode in the data to demonstrate
+'   I used WORD as opposed to byte because the encrypted
+'   values can be larger than 255 (limit for bytes!!!)
+DATA		WORD 78, WORD 73, WORD 67, WORD 69
+DATA		WORD 32, WORD 74, WORD 79, WORD 66 
+DATA		WORD 0 ' Terminator
+#ENDIF
+
+' Storage for the two keys (e,n) or (d,n)
+'   N should be the product of two primes p and q
+'   E is co-prime with phi(n)=(p-1)*(q-1)
+'   D is the inverse of e modulo phi(n)
+'   The two are essentially interchangeable (one encrypts, other decrypts)
+'   Limitations: Our values will need to be SMALL (N < 1000 or so)
+E 	VAR WORD  ' Can use D interchangeably
+N 	VAR WORD
+
+' The values for E and N
+'    In this case we chose N = 13 * 17 = 221
+'    Making phi(n) = 12 * 16 = 64 * 3 = 192
+'    Chose e = 7 (which has no factors in common with 192!)
+'    This makes d = 55
+'    Notice that 7 * 55 = 385 = 192 * 2 + 1
+E = 7   ' Use E = 55 to decrypt
+N = 221
+
+' Our simple program will read in each integer value
+P 	VAR WORD ' The current number to process
+C 	VAR WORD ' The word encrypted/decrypted using (E,N)
+
+#IF UseDebugIn = 1 #THEN
+	' Using DEBUGIN form (for input and output)
+DEBUG "Please enter a sequence of integer values, terminated by 0", CR
+DEBUGIN DEC P      ' Read in the next number to process
+DO UNTIL (P = 0)  	' Use 0 as a terminator value
+	GOSUB MODPOWER	' Encrypt it
+	GOSUB OUTPUTC	' Output the Character 
+	DEBUG C      	' Output the result
+	DEBUGIN DEC P  ' Read in the next number to process
+LOOP
+DEBUG CR
+#ELSE
+' Using the data from the Data Storage Area
+idx 	VAR WORD ' The index into the input message (of integers)
+
+DEBUG CLS, "Here is the encrypted message", CR
+idx = 0
+READ idx, WORD P	' Read in the next value
+DO UNTIL (P = 0)	' Use 0 as a terminator value
+	GOSUB MODPOWER	' Encrypt it
+	GOSUB OUTPUTC	' Output the character
+	idx = idx + 2	' Advance to next word (TWO bytes forward)
+	READ idx, WORD P ' And read in the next value
+LOOP
+#ENDIF
+END
+
+' This subroutine simply outputs the character
+' Inserted here only to allow us to distinguish 
+' between outputting as decimal or character
+OUTPUTC:
+#IF OutputInASCII = 1 #THEN
+	DEBUG C ' Output the result as a character
+#ELSE
+	DEBUG DEC C, " " ' Output the result in decimal format
+#ENDIF
+	RETURN
+	
+' This subroutine computes P^e (mod n)
+'    Very inefficiently however
+'    But it should do the job
+'    The result is stored in C
+MODPOWER:
+	I VAR WORD
+	H VAR WORD ' Used for Higher Order bits (if needed)
+	I = E
+	C = 1
+	DO WHILE I > 0
+#IF UseVerySmallN=1 #THEN
+		' This is how it is done
+		' Except P * P can get too large to store on a WORD
+		' This is fine if N < 256 (but not if it is bigger)
+		C = C * P
+		C = C // N  ' The Modulo Operator
+#ELSE
+		' We must do it a bit more complex
+		H = C ** P ' capture the higher-order bits
+		C = C * P  ' Same as before
+		' Actual value is 2^16 * H + C
+		C = C // N
+		H = (($FFFF // N + 1) * H) // N ' The higher modulo
+		C = (C + H) // N			 ' Combine the two
+#ENDIF
+		I = I - 1
+	LOOP
+	RETURN

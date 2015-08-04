@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+  <div class="solve">
+    <h2>Solve a challenge</h2>
+    <form action="{{url_for('solve')}}" method="post">
+      <select name="challenge">
+        {% for n in notsolved %}
+        <option value="{{n}}" />{{n}}
+        {% endfor %}
+        </option>
+      </select>
+      <input type="text" placeholder="answer" name="guess" maxlength="20" />
+      <input type="submit" value="submit" />
+    </form>
+  </div>
+  <div class="solved">
+    <h2>Solved challenges</h2>
+    <center>
+    <table class="score">
+      <tr>
+	{% for c in challenges %}
+	<td width=3.5%>{{c}}</td>
+	{% endfor %}
+      </tr>
+      <tr>
+	{% for c in challenges %}
+	   {% if c in solved %}
+	  	<td class="green">
+	   {% else %}
+	  	<td>
+	   {% endif %}
+	  &nbsp;
+	</td>
+	{% endfor %}
+      </tr>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+Use enigma june 26th setting to encrypt
+ ciph=enigma(the key for june twenty sixth is attacksurface in lowercase)
+
+ ciph="ZZZH ACCX MDSQ GOGN DABQ VWNI KQQD HBQJ GKPZ VLZA RXII QPLA J"
+
+
+Use WEAKLINK to decode krjeymggartidqkddinsruncwcs
+
+Then decode ZZZH ACCX MDSQ GOGN DABQ VWNI KQQD HBQJ GKPZ VLZA RXII QPLA J

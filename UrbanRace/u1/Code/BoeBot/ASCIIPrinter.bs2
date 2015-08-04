@@ -1,0 +1,28 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+' Author: Christian Duncan
+' ASCIIPrinter
+'
+' This program takes a string (from Data Storage)
+' and outputs its value in ASCII
+' This could be changed to use DEBUGIN for input 
+' but on the Mac's BS2 Program the DEBUGIN does not work
+' very well.  Very disappointing!!!  So, we use the DATA
+' buffer instead.
+' Maybe the reverse is also possible?  :-)
+
+DATA "NICE JOB", 0
+
+idx 	VAR BYTE  ' The current index in the string
+char VAR BYTE	' The current character (using read)
+
+DEBUG CLS, CR
+DEBUG "String in ASCII: "
+
+READ idx, char ' Get the next character
+DO WHILE (char <> 0)		' Not the terminal character
+	DEBUG DEC char, " " ' Print out the character (in Decimal form)
+	idx = idx + 1		' Advance to next character
+	READ idx, char		' And read the next character
+LOOP
+END

@@ -1,0 +1,16 @@
+This python script should be run in a virtualenv
+
+It requires python3.0
+  virtualenv -p /usr/bin/python3 env
+  source env/bin/activate
+
+Then,
+  pip install tweepy
+  python dm_stream.py
+
+The bot has a fatal bug that needs to be fixed.
+	1.  thx m8 <3
+		or
+	2.  xoxo lmao
+
+caused it to crash and burn
