@@ -7,10 +7,10 @@ from tweepy import Stream
 
 #enter the corresponding information from your Twitter application:
 
-CONSUMER_KEY = '800Air6WBvHdupOjE3R06mbHZ'
-CONSUMER_SECRET = 'YkHJKeCAOpZxK0UzARUWttZIechYcVbGvzbQVcNDU1yg7WrBU8'
-ACCESS_KEY = '3192750565-mOOoUcIsosBJLyGlC5a0Yk5mRLxKFIWeP76dLf0'
-ACCESS_SECRET = 'SAvAniBwRkuTv222XgmKyqlmNfzOxT6eDLkgEXT94fxpO'
+CONSUMER_KEY = ''
+CONSUMER_SECRET = ''
+ACCESS_KEY = ''
+ACCESS_SECRET = ''
 
 class StdOutListener(StreamListener):
     def send_intro_message(self,dmsender):
