@@ -63,7 +63,8 @@ class StdOutListener(StreamListener):
         if 'direct_message' in decoded.keys():
             dm = decoded['direct_message']
             dmsender = dm['sender_screen_name']
-            dmtext = dm['text'].upper().replace(" ","")
+            rawtext = dm['text'].upper().replace(" ","")
+            dmtext = ''.join(ch for ch in rawtext if ch.isalpha())
             if "CDFour" in dmsender:
                 return True
             else:
