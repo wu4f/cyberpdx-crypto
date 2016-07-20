@@ -3,18 +3,18 @@ import flask, flask.views
 import os
 
 users = {
-        'cyberdiscoverypdx1': ['znuwha01', 'Team1'],
-        'cyberdiscoverypdx2': ['rpibdf02', 'Team2'],
-        'cyberdiscoverypdx3': ['ioknjl03', 'Team3'],
-        'cyberdiscoverypdx4': ['alnqkc04', 'Team4'],
-        'cyberdiscoverypdx5': ['fzwvsq05', 'Team5'],
-        'cyberdiscoverypdx6': ['yxehal06', 'Team6'],
-        'cyberdiscoverypdx7': ['okavsg07', 'Team7'],
-        'cyberdiscoverypdx8': ['bvzghp08', 'Team8'],
-        'cyberdiscoverypdx9': ['qrghpt09', 'Team9'],
-        'cyberdiscoverypdx10': ['puxstq10', 'Team10'],
-        'cyberdiscoverypdx11': ['kcwqgl11', 'Team11'],
-        'cyberdiscoverypdx12': ['gciunv12', 'Team12']
+        'wuchang': ['9999', 'Wu'],
+        'tim': ['9999', 'Tim'],
+        'cdpdx1': ['znuwha01', 'Capital'],
+        'cdpdx2': ['rpibdf02', 'Cleveland'],
+        'cdpdx3': ['ioknjl03', 'Lincoln'],
+        'cdpdx4': ['alnqkc04', 'Madison'],
+        'cdpdx5': ['fzwvsq05', 'Skyview'],
+        'cdpdx6': ['yxehal06', 'St.Marys'],
+        'cdpdx7': ['okavsg07', 'SST'],
+        'cdpdx8': ['bvzghp08', 'Tigard'],
+        'cdpdx9': ['qrghpt09', 'Tualatin'],
+        'cdpdx10': ['puxstq10', 'Village']
 }
 
 class Login(flask.views.MethodView):

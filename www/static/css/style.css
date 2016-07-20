@@ -172,12 +172,17 @@ p>span{
    width:100%;
 }
 
+table.score {
+	margin-left:auto;
+	margin-right:auto;
+}
+
 .score tbody{
     /* border:solid #6BB3F2 1px;*/
     border:solid #628229 1px;
 }
 .score td{
-  padding:1px;
+  padding:3px;
   /*border-right:solid 1px #6BB3F2;*/
   border-right:solid 1px #628229;
 }

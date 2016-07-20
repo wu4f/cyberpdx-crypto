@@ -3,25 +3,14 @@
 	{% if 'username' in session %}
 		<p>Logged in as: {{session['username']}}</p>
 	{% else %}
-	<p>This is the scoring site for the cryptographic challenges of CyberDiscovery 2015.</p>
-	<p>Your user login is the same as your team's GMail login (i.e. cyberdiscoverypdx1, cyberdiscoverypdx2, etc.).</p>
-	<p>Your password is also the same as your team's GMail password.</p>
-		<p>Please <a href="{{url_for('login')}}">login</a></p>
-        <h2>Links</h2>
-        <ul>
-            <li><a href="https://prezi.com/cr-xpdcx9um_/cd15-introduction/">Introduction</a>
-            <li><a href="https://prezi.com/yoloye-tbkmc/cd15-crypto-1-encoding/">Encoding Lecture</a>
-            <li><a href="https://prezi.com/skfcst7npbrx/cd15-crypto-2-simple-ciphers/">Simple Ciphers Lecture</a>
-            <li><a href="https://prezi.com/lvzemkrf-ryh/cd15-crypto-3-modern-ciphers/">Modern Ciphers Lecture</a>
-            <li><a href="http://cyberd.oregonctf.org/static/diary.tar">Four's Diary Entries</a>
-            <li><a href="http://web.cs.mun.ca/~michael/c/ascii-table.html">ASCII</a>
-            <li><a href="http://www.limited-entropy.com/wp-content/uploads/2009/03/vigenere_square.png">Vigenere Table</a>
-            <li><a href="http://cyberd.oregonctf.org/static/dailykeys.pdf">Enigma Keys for June 1, 2015 - July 10, 2015</a>
-            <li><a href="http://regex.info/exif.cgi">EXIF Image metadata on-line tool</a>
-            <li><a href="http://enigma.louisedade.co.uk/enigma.html">Enigma emulator</a>
-          </ul>
-
+		<p>This is the scoring site for the cryptographic challenges of CyberPDX 2016.</p>
+		<p>Your user login and password are on your card</p> <p>Please <a href="{{url_for('login')}}">login</a></p>
 	{% endif %}
+<hr>
+Links to Prezi material: <a href="https://prezi.com/cr-xpdcx9um_/cyberpdx-introduction/">CybePDX intro</a> | <a href="http://prezi.com/yoloye-tbkmc">Encoding</a> | <a href="http://prezi.com/skfcst7npbrx">Simple Ciphers</a> | <a href="http://prezi.com/lvzemkrf-ryh">Modern Ciphers</a> | <a href="https://prezi.com/8e8arujv41ru/cyberpdx-its-a-wrap/">CyberPDX wrap-up</a><br>
+Links for students: <a href="http://cyberd.oregonctf.org/static/diary.zip">Four's Diary Entries</a> | <a href="http://cyberd.oregonctf.org/static/dailykeys.html">Enigma Keys</a> | Caesar wheel (<a href="http://cyberd.oregonctf.org/static/wheel.png">png</a>,<a href="http://cyberd.oregonctf.org/static/wheel.png">psd</a>)<br>
+Instructor material: <a href="http://cyberd.oregonctf.org/static/CryptoInstructorMaterial.zip">zip</a><br>
+Useful resources: <a href="http://web.cs.mun.ca/~michael/c/ascii-table.html">ASCII</a> | <a href="http://www.limited-entropy.com/wp-content/uploads/2009/03/vigenere_square.png">Vigenere Table</a> | <a href="http://regex.info/exif.cgi">EXIF Image metadata on-line tool</a> | <a href="http://enigma.louisedade.co.uk/enigma.html">Enigma emulator</a>
 	{% with messages = get_flashed_messages() %}
 			{% for message in messages %}
 {{message}}

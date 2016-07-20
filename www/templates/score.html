@@ -3,11 +3,11 @@
 <h2>Scoreboard</h2>
 <table class="score">
 <tr>
-	<td width=8%>Team</td>
+	<td>Team</td>
 	{% for c in challenges %}
-	<td width=3.5%>{{c}}</td>
+	<td>{{c}}</td>
 	{% endfor %}
-	<td width=4%>Race</td>
+	<td>Graph</td>
 </tr>
 {% for team in scores %}
 <tr>
@@ -20,9 +20,9 @@
 		  {% else %}
 	  <td>
 	  {% endif %}
-	  &nbsp; <!-- {{s}} -->
 	</td>
 	{% endfor %}
+	  <!--{{s}}-->
 </tr>
 {% endfor %}
 </table>

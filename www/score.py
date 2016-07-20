@@ -11,6 +11,8 @@ class Score(flask.views.MethodView):
         scores = {}
         teamnames = {}
         for user in users.keys():
+            if user is 'tim' or user is 'wuchang':
+	        continue
             userdir = "static/" + user + "/";
             if not os.path.exists(userdir):
 	        os.mkdir(userdir)
@@ -26,6 +28,7 @@ class Score(flask.views.MethodView):
                     scores[user].append(levelscore)
                 else:
                     scores[user].append(0)
+#	Re-purpose old Urban Race entry for Graph Homework
             if os.path.exists(userdir+"final.txt"):
 	        scores[user].append(10)
             else:
