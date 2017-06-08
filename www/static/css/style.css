@@ -24,7 +24,7 @@ header{height:200px;
 
 h1{
     font-family: 'Nova Square', cursive;
-	color:#fff;
+    color:#fff;
     font-size: 2rem;
     padding:5rem 2rem;
     line-height: 200%;
@@ -51,12 +51,10 @@ h2{
 }
 
 #nav{
-    /*background:linear-gradient(135deg,#11468C,#429ADB, #347EBF);*/
-    background:linear-gradient(135deg,#628229,#92B259, #82A249);
+    background:linear-gradient(90deg,#354005,#6A7F10, #354005);
 }
 #nav ul{
- /*   background-color:#11468C;*/
-    background-color:#628229;
+    background:linear-gradient(90deg,#354005,#6A7F10, #354005);
     padding:5px 0 4px 0;
     bottom:0;
     position: absolute;
@@ -74,10 +72,8 @@ h2{
     text-decoration: none;
 }
 #nav a:hover{
-    /* background-color:#6BB3F2;*/
-    background-color:#92B259;
-    /* color:#347EBF;*/
-    color:#FFF;
+    color:#2A3F10;
+    background-color:#F0F0F0;
 }
 
 form{
@@ -90,17 +86,13 @@ input[type = submit]{
     padding:10px 40px 12px;
     border:none;
     font-size:1rem;
-    /* color:#fff; */
-    /* background-color:#11468C;*/
-    background-color:#628229;
+    background-color:#354005;
     color:#fff;
     margin:-4px;
 }
 input[type = submit]:hover{
-    /* background-color: #6bb3f2;*/
-    color:#FFF;
-    background-color:#92B259;
-
+    color:#2A3F10;
+    background-color:#F0F0F0;
 }
 section{
     background-color:#fff;
@@ -197,8 +189,7 @@ table.score {
 
 footer {
     color:#fff;
-    /*background:linear-gradient(135deg,#11468C,#429ADB, #347EBF);*/
-    background:linear-gradient(135deg,#628229,#92B259, #82A249);
+    background:linear-gradient(90deg,#354005,#6A7F10, #354005);
 }
 
 @media only screen and (max-width : 700px){
