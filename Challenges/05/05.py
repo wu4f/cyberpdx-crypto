@@ -3,7 +3,7 @@
 # keep in cyberd.oregonctf.org/static/WHOAMI.jpg
 import os
 ofile=open('05_final.txt','w+')
-ofile.write('http://goo.gl/gUwMe4\n')
+ofile.write('https://goo.gl/fmRvDt\n')
 ofile.close()
 s="the key for number five is shirleysidentities"
 command='exiftool -ImageDescription="'+s+'" static/WHOAMI.jpg'
