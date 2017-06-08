@@ -1,0 +1,7 @@
+When the twitbot receives the last key, it sends out this URL
+http://goo.gl/N5Fd80
+
+Which points to
+http://cyberd.oregonctf.org/static/getme.jpg
+
+which is photo of final prize with GPS coordinates of location

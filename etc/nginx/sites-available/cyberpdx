@@ -1,0 +1,20 @@
+server {
+    listen 80;
+    server_tokens off;
+    server_name cyberpdx.oregonctf.org;
+    root /var/www/html/cyberpdx/www;
+
+    location / {
+         include uwsgi_params;
+         uwsgi_pass unix:///tmp/cyberpdx.sock;
+     }
+
+     location /static {
+         alias /var/www/html/cyberpdx/www/static;
+     }
+
+     ## Only requests to our Host are allowed
+     if ($host !~ ^(crypto.cyberpdx.org|cyberd.oregonctf.org)$ ) {
+        return 444;
+     }
+}

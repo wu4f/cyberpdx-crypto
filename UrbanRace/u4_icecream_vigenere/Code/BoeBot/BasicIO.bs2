@@ -1,0 +1,14 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+myNum   VAR     NIB 
+ 
+DEBUG CLS, "Enter a number (1 - 5)? --> " 
+DEBUGIN DEC1 myNum 
+
+IF ((myNum >= 1) AND (myNum <= 5)) THEN 
+  DEBUG CLS, "You entered: ", DEC1 myNum 
+ELSE 
+  DEBUG CLS, "Sorry, number out of range" 
+ENDIF 
+END 

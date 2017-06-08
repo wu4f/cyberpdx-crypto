@@ -1,0 +1,29 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+' Simple Single Mod Power calculation
+'   Compute P^E mod N (for small N only)
+
+P VAR WORD
+E VAR WORD
+N VAR WORD
+C VAR WORD
+I VAR WORD
+P = 39
+E = 7    ' Try E = 55 (using output below)
+N = 221
+
+' To compute C = P^E mod N we do
+' C = C * P mod N (E times)
+' i.e. C = 1, C = P mod N, C = P * P = C * P mod N, 
+'     C = P * P * P = C * P mod N, etc. 
+C = 1
+I = E
+DO WHILE I > 0
+	C = (C * P) // N   ' // is the modulo operator
+	I = I - 1
+LOOP
+
+DEBUG CLS, DEC P, " became ", DEC C, CR
+
+END

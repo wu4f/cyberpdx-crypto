@@ -1,0 +1,6 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+DEBUG "Hello, this is a message from your Boe-Bot.\n"
+
+END

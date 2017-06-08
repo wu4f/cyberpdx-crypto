@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Scoreboard</h2>
+<table class="score">
+<tr>
+	<td>Team</td>
+	{% for c in challenges %}
+	<td>{{c}}</td>
+	{% endfor %}
+	<td>Graph</td>
+</tr>
+{% for team in scores %}
+<tr>
+	<td>{{teams[team]}}</td>
+	{% for s in scores[team] %}
+	  {% if s > 10 %}
+	  <td class="green">
+		  {% elif s == 10 %}
+	  <td class="green">
+		  {% else %}
+	  <td>
+	  {% endif %}
+	</td>
+	{% endfor %}
+	  <!--{{s}}-->
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

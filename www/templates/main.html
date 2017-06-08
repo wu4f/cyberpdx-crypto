@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+	{% if 'username' in session %}
+		<p>Logged in as: {{session['username']}}</p>
+	{% else %}
+		<p>This is the scoring site for the cryptographic challenges of CyberPDX 2016.</p>
+		<p>Your user login and password are on your card</p> <p>Please <a href="{{url_for('login')}}">login</a></p>
+	{% endif %}
+<hr>
+Links to Prezi material: <a href="https://prezi.com/cr-xpdcx9um_/cyberpdx-introduction/">CybePDX intro</a> | <a href="http://prezi.com/yoloye-tbkmc">Encoding</a> | <a href="http://prezi.com/skfcst7npbrx">Simple Ciphers</a> | <a href="http://prezi.com/lvzemkrf-ryh">Modern Ciphers</a> | <a href="https://prezi.com/8e8arujv41ru/cyberpdx-its-a-wrap/">CyberPDX wrap-up</a><br>
+Links for students: <a href="http://cyberd.oregonctf.org/static/diary.zip">Four's Diary Entries</a> | <a href="http://cyberd.oregonctf.org/static/dailykeys.html">Enigma Keys</a> | Caesar wheel (<a href="http://cyberd.oregonctf.org/static/wheel.png">png</a>,<a href="http://cyberd.oregonctf.org/static/wheel.psd">psd</a>)<br>
+Instructor material: <a href="http://cyberd.oregonctf.org/static/CryptoInstructorMaterial.zip">zip</a> | USENIX ASE 2016 <a href="http://www.thefengs.com/wuchang/papers/feng16divergent.pdf">paper</a> | <a href="https://prezi.com/c7zuu-48tnfg/a-divergent-themed-capture-the-flag-and-urban-race/">prezi</a> <br>
+Useful resources: <a href="https://upload.wikimedia.org/wikipedia/commons/d/dd/ASCII-Table.svg">ASCII</a> | <a href="http://www.limited-entropy.com/wp-content/uploads/2009/03/vigenere_square.png">Vigenere Table</a> | <a href="http://exif.regex.info/">EXIF Image metadata on-line tool</a> | <a href="http://enigma.louisedade.co.uk/enigma.html">Enigma emulator</a>
+	{% with messages = get_flashed_messages() %}
+			{% for message in messages %}
+{{message}}
+			{% endfor %}
+		</pre>
+	{% endwith %}
+{% endblock %}
+

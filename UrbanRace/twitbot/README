@@ -1,0 +1,28 @@
+This python script should be run in a virtualenv
+
+It requires python3.0
+  virtualenv -p /usr/bin/python3 env
+  source env/bin/activate
+
+Then,
+  pip install tweepy
+  python dm_stream.py
+
+Note that the challenges and their solutions are in ../challenges.py
+
+Also note that the Twitter keys should be set in key.py
+
+If running Python 3.4, then there is a change that must be made in
+the tweepy/streaming.py script
+line 161:
+self._buffer += self._stream.read(read_len).decode('UTF-8', 'ignore')
+line 171:
+self._buffer += self._stream.read(self._chunk_size).decode('UTF-8', 'ignore')
+
+----------
+For PSU faculty
+
+  All cdpdx[0-12] accounts are registered on tweetdelete.net for bi-weekly
+  deletion of tweets to re-run race
+
+  Use norrth.com/dmcleaner to manually delete Twitter DMs
