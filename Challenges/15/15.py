@@ -9,7 +9,7 @@
 
 s="the key for number fifteen is mousetakeover in lowercase"
 colstr="POLISH"
-msg=colstr+"theurlthatyouwanttotryishttp://goo.gl/Q8mx85"
+msg=colstr+"theurlthatyouwanttotryishttps://goo.gl/rO1yRx"
 cols=len(colstr)
 pad= len(colstr) - (len(msg) % cols)
 msg=msg+pad*" "
