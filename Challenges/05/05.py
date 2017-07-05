@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # URL points to image containing this generated EXIF data
-# keep in cyberd.oregonctf.org/static/WHOAMI.jpg
+# keep in crypto.cyberpdx.org/static/WHOAMI.jpg
 import os
 ofile=open('05_final.txt','w+')
 ofile.write('https://goo.gl/fmRvDt\n')

@@ -40,6 +40,7 @@ For generating the challenges, also install the following:
 	pip install py-enigma	(0.1)
 	pip install PyQRCode	(1.2.1)
 	pip install pyBarcode	(0.7)
+	pip install pypng	(0.0.18)
 
 To configure the web site,
         Edit www/login.py to configure users and passwords (Apologies in advance for this.

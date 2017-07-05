@@ -1,6 +1,6 @@
 #!/usr/bin/python
-# Static link http://goo.gl/FsFivj is encoded in ASCII HEX
-# Points to http://cyberd.oregonctf.org/static/snake.jpg
+# Static link https://goo.gl/igJyl0 is encoded in ASCII HEX
+# Points to http://crypto.cyberpdx.org/static/snake.jpg
 # Put encoded Scytale message in EXIF of image
 import os, sys
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
@@ -8,7 +8,7 @@ import challenges as c
 
 # c.u5c => challenge no. 1 for urban race
 s=c.u5c
-link="http://goo.gl/FsFivj"
+link="https://goo.gl/igJyl0"
 
 j="".join([str(hex(ord(c))[2:])+" " for c in link])
 outfile=open("u5_final.txt","w")
