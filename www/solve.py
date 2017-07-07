@@ -72,7 +72,7 @@ class Solve(flask.views.MethodView):
             if not os.path.exists(path+"logs/"):
                 os.mkdir(path+"logs/")
             logfilename = path + "logs/" + challenge + ".log"
-            logfile = open(logfilename,"ab+")
+            logfile = open(logfilename,"a+")
             rank=len(logfile.readlines())+1
             logentry = username + " " + guess + " : " + time.asctime() + " : " + flask.request.remote_addr + "\n"
             logfile.write(logentry)
