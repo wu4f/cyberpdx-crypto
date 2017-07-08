@@ -94,10 +94,10 @@ class Solve(flask.views.MethodView):
             f.close()
             current_time=int(time.time())
             wait_time=current_time-lockout_time
-            if wait_time > 120:
+            if wait_time > 60:
                 return 0
             else:
-                return 120-wait_time
+                return 60-wait_time
 
     def penalize(self,userfile):
         f=open(userfile,"w+")
