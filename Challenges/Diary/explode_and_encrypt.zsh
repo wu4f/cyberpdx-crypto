@@ -1,5 +1,5 @@
 #!/bin/zsh
-export RACE_DAY="July 12 2016"
+export RACE_DAY="July 14 2017"
 pdftk Diary.pdf burst output %02d.pdf compress
 NAME=`date --date "$RACE_DAY - $(date +30) day" '+%B%d'`
 pdftk 01.pdf output 01_$NAME.pdf owner_pw cyd user_pw catchawave encrypt_128bit

@@ -1,0 +1,26 @@
+Why of CyberPDX?
+  Placards for teams from cyberpdx_www/cybercamp
+  10 First Principles Bingo Sheet and Handout
+
+Crypto 1:
+  Placards for teams from cyberpdx_www/cybercamp
+  Challenges 1-5 (Challenges)
+  Tris Letter (Challenges/00_Letters_Figures)
+  USB stick (Challenges/Diary)
+  Day1LectureHandouts (LectureHandouts/Day1Handouts)
+
+Crypto 2:
+  Placards for teams from cyberpdx_www/cybercamp
+  Challenges 6-11, Wheel
+  Day2LectureHandouts (Vigenere table)
+  Enigma keys (web site: /static/dailykeys.html)
+
+Crypto 3:
+  Challenges 12-18
+  Homework ice cream truck graph (Day3Handouts/HomeworkGraph)
+  Lecture ice cream truck graph (Day3Handouts/LectureGraph)
+  Lecture ice cream truck activity (Day3Handouts/LectureIceCreamMessageActivity)
+  Pasta/Green&Red
+
+Crypto 4:
+  Challenges 19-24
