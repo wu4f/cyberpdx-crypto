@@ -11,7 +11,7 @@ u3s = "FREEDOM"
 u4c = "For key four look up under the bridge across cramer and smith then tell me what you think"
 u4s = "GREEN"
 
-u5c = "For key five, two pharoahs are guarding it on a building across the park blocks from Smith Memorial"
+u5c = "For key five, Two Pharoahs Are Guarding It On A Building Across The Park Blocks From Smith."
 u5s = "BLACKSTONE"
 
 # No commas allowed
