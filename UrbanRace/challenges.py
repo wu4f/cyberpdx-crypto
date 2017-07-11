@@ -11,11 +11,11 @@ u3s = "FREEDOM"
 u4c = "For key four look up under the bridge across cramer and smith then tell me what you think"
 u4s = "GREEN"
 
-u5c = "For key five, Two Pharoahs Are Guarding It On A Building Across The Park Blocks From Smith."
+u5c = "For key five, two pharoahs guard it on a building across the park from Smith."
 u5s = "BLACKSTONE"
 
 # No commas allowed
-u6c = "For Key Six Find Out What The Carpenter Built Here"
+u6c = "For key six find out what the Carpenter built here"
 u6latdeg='45.509238'
 u6latref='N'
 u6longdeg='122.681360'

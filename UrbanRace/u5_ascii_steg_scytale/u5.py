@@ -16,6 +16,6 @@ outfile.write(j+"\n")
 outfile.close()
 
 s=s.replace(' ','')
-f=s[0::15]+s[1::15]+s[2::15]+s[3::15]+s[4::15]+s[5::15]+s[6::15]+s[7::15]+s[8::15]+s[9::15]+s[10::15]+s[11::15]+s[12::15]+s[13::15]+s[14::15]
+f=s[0::8]+s[1::8]+s[2::8]+s[3::8]+s[4::8]+s[5::8]+s[6::8]+s[7::8]
 command='exiftool -ImageDescription="'+f+'" static/snake.jpg'
 os.system(command)
