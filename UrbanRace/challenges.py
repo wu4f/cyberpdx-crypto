@@ -15,7 +15,7 @@ u5c = "For key five, Two Pharoahs Are Guarding It On A Building Across The Park 
 u5s = "BLACKSTONE"
 
 # No commas allowed
-u6c = "For key six find out what the Carpenter built here"
+u6c = "For Key Six Find Out What The Carpenter Built Here"
 u6latdeg='45.509238'
 u6latref='N'
 u6longdeg='122.681360'
