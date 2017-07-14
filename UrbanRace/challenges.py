@@ -30,5 +30,7 @@ u7s='http://goo.gl/N5Fd80'
 
 mu1c = "For key one, who are 'the ones' on the stone benches outside of Epler's Hall?"
 mu1s = "STUDENTS"
-mu2c = "For key two, go to the Walk Of Heroines and find out what Rosa thinks you get when you think differently"
-mu2s = "FREEDOM"
+#mu2c = "For key two, go to the Walk Of Heroines and find out what Rosa thinks you get when you think differently"
+#mu2s = "FREEDOM"
+mu2c = "For key two, on a bench on the Walk Of Heroines and find out the two things Mae is caught between"
+mu2s = "EVILS"

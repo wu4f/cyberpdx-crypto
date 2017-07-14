@@ -23,7 +23,7 @@ plaintext=s4.upper().replace(' ','')
 cycledkey=cycle(key)
 m4=''.join(alpha[(alpha.index(next(cycledkey))+alpha.index(plaintext[i])) % 26] for i in range(len(s4)))
 
-m5="http://cyberd.oregonctf.org/static/____.jpg"
+m5="http://crypto.cyberpdx.org/static/____.jpg"
 ofile=open("mu2_final.txt","w+")
 ofile.write(m1+"\n\n"+m2+"\n\n"+m3+"\n\n"+m4+"\n\n"+m5+"\n")
 ofile.close()
