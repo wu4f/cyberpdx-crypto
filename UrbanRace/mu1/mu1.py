@@ -14,7 +14,7 @@ s = "Visit goo.gl with"
 m=''.join(hex(ord(n))[2:].ljust(3,' ') for n in s)
 u=open("mu1_final.txt","w+")
 u.write(m+"\n\n")
-goog="vxFn4j"
+goog="uvePSG"
 binstrurl=''.join([ ("   {num:08b}".format(num=ord(c))+"\n") for c in goog])
 u.write(binstrurl+"\n")
 u.close()
