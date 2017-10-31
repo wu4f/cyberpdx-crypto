@@ -1,3 +1,7 @@
 Challenge 15 -> ambiguous URL
 
-Make 10 principles a box in crypto
+Make 10 principles a box in crypto scoreboard
+
+Add Shodan to diary
+
+Remove nessus and other commercial tools?
