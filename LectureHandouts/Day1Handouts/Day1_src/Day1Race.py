@@ -4,8 +4,8 @@
 # Put encoded Scytale message in EXIF of image
 import os, sys
 
-s="Which Lord said: "
-f="Everything secret degenerates"
+s="Which King said: "
+f="Struggle is a never-ending process"
 m=''.join(hex(ord(n))[2:].ljust(3,' ') for n in f)
 s = s+m
 
