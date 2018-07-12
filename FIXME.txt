@@ -1,5 +1,3 @@
-Challenge 15 -> ambiguous URL
-
 Add Shodan to diary
 
 Remove nessus and other commercial tools?
