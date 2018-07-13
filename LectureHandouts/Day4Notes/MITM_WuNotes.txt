@@ -1,0 +1,17 @@
+Activity #1:  Network design
+   Bad actor = dropper
+-----------------------
+card 1=>evan's bogus public
+envelope 2=>evan's bogus message encrypted by Alice's pubkey
+
+sign with alice public/private key with private hidden
+volunteers->nodes in network->validator with calculator
+have bob send req to Alice to get key
+  forward over to alice>after one busy
+have alice reply
+  on the way back...replace with card 1 (evan's bogus pub)
+have bob create message and seal with envelope (put evan's bogus on envelope)
+  and send it over to Alice
+  on the way to alice...replace with envelope 2
+Ask for validation
+  open to read message
