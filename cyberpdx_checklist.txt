@@ -23,7 +23,7 @@ Lecture
   Sequence them for stapling ease (via grouping)
 CTF
   Print Challenges.docx (with nums this time?)
-  Print IntroLetter on yellow paper
+  Print IntroLetter.docx on yellow paper
 Table placards
   Print out from cyberpdx_www/cybercamp
 Twitter
