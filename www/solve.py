@@ -34,9 +34,9 @@ challenges = {
 class Solve(flask.views.MethodView):
     @login_required
     def get(self):
-        userdir = "static/" + flask.session['username'] + "/"
+        userdir = "static/obj/" + flask.session['username'] + "/"
         if not os.path.exists(userdir):
-            os.mkdir(userdir)
+            os.makedirs(userdir)
         sols = [f for f in challenges.keys() if os.path.isfile(userdir+f)]
         nsol = [f for f in challenges.keys() if not (os.path.isfile(userdir+f))]
         return flask.render_template('solve.html', solved=sorted(sols), notsolved=sorted(nsol), challenges=sorted(challenges.keys()))
@@ -52,7 +52,7 @@ class Solve(flask.views.MethodView):
             if r not in flask.request.form:
                 flask.flash("Error: {0} is required.".format(r))
                 return flask.redirect(flask.url_for('solve'))
-        path = "static/"
+        path = "static/obj/"
         username = flask.session['username']
         challenge = flask.request.form['challenge']
         guess = flask.request.form['guess'].upper().replace(" ","")
@@ -70,7 +70,7 @@ class Solve(flask.views.MethodView):
         if answer==guess:
             flask.flash("Correct.  You have solved " + challenge)
             if not os.path.exists(path+"logs/"):
-                os.mkdir(path+"logs/")
+                os.makedirs(path+"logs/")
             logfilename = path + "logs/" + challenge + ".log"
             logfile = open(logfilename,"a+")
             rank=len(logfile.readlines())+1
