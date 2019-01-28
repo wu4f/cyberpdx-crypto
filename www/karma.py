@@ -9,9 +9,9 @@ class Karma(flask.views.MethodView):
     @login_required
     def get(self):
         username = flask.session['username']
-        userdir = "static/" + username + "/"
+        userdir = "static/obj/" + username + "/"
         if not os.path.exists(userdir):
-            os.mkdir(userdir)
+            os.makedirs(userdir)
         if os.path.isfile(userdir+'karma.txt'):
             curteam = open(userdir+'karma.txt','r').readline().rstrip('\n')
             curteamname = users[curteam][1]
@@ -31,7 +31,7 @@ class Karma(flask.views.MethodView):
             if r not in flask.request.form:
                 flask.flash("Error: {0} is required.".format(r))
                 return flask.redirect(flask.url_for('karma'))
-        path = "static/"
+        path = "static/obj/"
         username = flask.session['username']
         team = flask.request.form['team']
         if team not in users.keys():
