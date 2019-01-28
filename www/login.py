@@ -33,9 +33,9 @@ class Login(flask.views.MethodView):
         passwd = flask.request.form['passwd']
         if username in users and users[username][0] == passwd:
             flask.session['username'] = username
-            userdir = "static/" + flask.session['username']
+            userdir = "static/obj/" + flask.session['username']
             if not os.path.exists(userdir):
-                os.mkdir(userdir)
+                os.makedirs(userdir)
         else:
             flask.flash("Username doesn't exist or incorrect password")
         return flask.redirect(flask.url_for('main'))
