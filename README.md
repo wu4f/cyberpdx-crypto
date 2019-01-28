@@ -60,5 +60,4 @@ To configure the web site,
                 are readable by apache2 (www-data)
         If using nginx,
           Install scripts provided in etc/
-          Then, to reload on a systemd do "sudo systemctl restart <service>"
 If you have any questions, wuchang at pdx.edu
