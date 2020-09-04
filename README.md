@@ -1,4 +1,4 @@
-This is the source distribution for the challenges and urban race used in CyberDiscovery at Portland State University in 2015.
+This is the source distribution for the challenges and urban race used in CyberPDX at Portland State University in 2016.
 
 Challenges/      => Directory containing the first 24 puzzles
 LectureHandouts/ => For the examples in class
@@ -10,9 +10,9 @@ Clone the git repository into a place that you will run from.  For example,
 /var/www/html.  If you don't have git....
         sudo apt-get install git
         cd /var/www/html
-        git clone https://<username>@bitbucket.org/wuchangfeng/cyberd_crypto_2015.git
+        git clone https://<username>@bitbucket.org/wuchangfeng/cyberd_crypto_2016.git
                 or
-        git clone https://<username>@bitbucket.org/wuchangfeng/cyberd_crypto_2015.git <dirname>
+        git clone https://<username>@bitbucket.org/wuchangfeng/cyberd_crypto_2016.git <dirname>
 
 The files assume that <dirname> is cyberd.
 
@@ -22,6 +22,7 @@ the unpacking challenges, and the Python-Flask web interface....
         sudo apt-get install python-pip
         sudo apt-get install python-virtualenv
         sudo apt-get install libapache2-mod-wsgi
+	sudo apt-get install libimage-exiftool-perl
 To create the Python virtualenv, do:
         cd www
         mkdir env
@@ -32,6 +33,13 @@ Within the environment, install flask, lockfile, and pexpect using
 these commands...
         pip install flask
         pip install lockfile
+
+For generating the challenges, also install the following:
+	pip install pillow	(3.2.0)
+	pip install code128 	(0.3)
+	pip install py-enigma	(0.1)
+	pip install PyQRCode	(1.2.1)
+	pip install pyBarcode	(0.7)
 
 To configure the web site,
         Edit www/login.py to configure users and passwords (Apologies in advance for this.

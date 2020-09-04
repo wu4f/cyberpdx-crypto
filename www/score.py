@@ -11,11 +11,11 @@ class Score(flask.views.MethodView):
         scores = {}
         teamnames = {}
         for user in users.keys():
-            if user is 'tim' or user is 'wuchang':
-	        continue
+            if user is 'wuchang':
+                continue
             userdir = "static/" + user + "/";
             if not os.path.exists(userdir):
-	        os.mkdir(userdir)
+                os.mkdir(userdir)
             scores[user] = []
             teamnames[user] = users[user][1]
             for c in sorted(challenges.keys()):
@@ -28,9 +28,9 @@ class Score(flask.views.MethodView):
                     scores[user].append(levelscore)
                 else:
                     scores[user].append(0)
-#	Re-purpose old Urban Race entry for Graph Homework
+#        Re-purpose old Urban Race entry for Graph Homework
             if os.path.exists(userdir+"final.txt"):
-	        scores[user].append(10)
+                scores[user].append(10)
             else:
                 scores[user].append(0)
-	return flask.render_template('score.html', scores=scores, teams=teamnames, challenges=sorted(challenges.keys()))
+        return flask.render_template('score.html', scores=scores, teams=teamnames, challenges=sorted(challenges.keys()))

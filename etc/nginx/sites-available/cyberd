@@ -1,0 +1,20 @@
+server {
+    listen 80;
+    server_tokens off;
+    server_name cyberd.oregonctf.org;
+    root /var/www/html/cyberd/www;
+
+    location / {
+         include uwsgi_params;
+         uwsgi_pass unix:///tmp/cyberd.sock;
+     }
+
+     location /static {
+         alias /var/www/html/cyberd/www/static;
+     }
+
+     ## Only requests to our Host are allowed
+     if ($host !~ ^(oregonctf.org|cyberd.oregonctf.org)$ ) {
+        return 444;
+     }
+}

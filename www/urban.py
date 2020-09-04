@@ -8,12 +8,12 @@ class Urban(flask.views.MethodView):
     @login_required
     def get(self):
         status=0
-	userdir = "static/" + flask.session['username'] + "/"
-	if not os.path.exists(userdir):
-	    os.mkdir(userdir)
-	if os.path.exists(userdir+"final.txt"):
+        userdir = "static/" + flask.session['username'] + "/"
+        if not os.path.exists(userdir):
+            os.mkdir(userdir)
+        if os.path.exists(userdir+"final.txt"):
             status=1
-	return flask.render_template('urban.html', solved=status)
+        return flask.render_template('urban.html', solved=status)
 
     @login_required
     @locked("/tmp/mylock",5)
@@ -27,8 +27,8 @@ class Urban(flask.views.MethodView):
                 flask.flash("Error: {0} is required.".format(r))
                 return flask.redirect(flask.url_for('urban'))
         path = "static/"
-	username = flask.session['username']
-	guess = flask.request.form['guess']
+        username = flask.session['username']
+        guess = flask.request.form['guess']
         if os.path.isfile(path+username+"/final.txt"):
             flask.flash("You have already solved the final challenge")
             return flask.redirect(flask.url_for('urban'))
@@ -39,14 +39,14 @@ class Urban(flask.views.MethodView):
         numright = self.check_answer(guess)
         if (numright == 6):
             flask.flash("Correct.  Congratulations.  You have completed the race")
-	    if not os.path.exists(path+"logs/"):
-		os.mkdir(path+"logs/")
+            if not os.path.exists(path+"logs/"):
+                os.mkdir(path+"logs/")
             logfilename = path + "logs/final.log"
             logfile = open(logfilename,"ab+")
             rank=len(logfile.readlines())+1
-	    logentry = username + " " + guess + " : " + time.asctime() + " : " + flask.request.remote_addr + "\n"
-	    logfile.write(logentry)
-	    logfile.close()
+            logentry = username + " " + guess + " : " + time.asctime() + " : " + flask.request.remote_addr + "\n"
+            logfile.write(logentry)
+            logfile.close()
             userfile = open(path+username+"/final.txt",'w')
             userfile.write(str(rank)+"\n")
             userfile.close()

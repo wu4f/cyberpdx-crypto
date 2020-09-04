@@ -4,7 +4,6 @@ import os
 
 users = {
         'wuchang': ['9999', 'Wu'],
-        'tim': ['9999', 'Tim'],
         'cdpdx1': ['znuwha01', 'Capital'],
         'cdpdx2': ['rpibdf02', 'Cleveland'],
         'cdpdx3': ['ioknjl03', 'Lincoln'],

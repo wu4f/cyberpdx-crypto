@@ -8,6 +8,10 @@ Then,
   pip install tweepy
   python dm_stream.py
 
+Note that the challenges and their solutions are in ../challenges.py
+
+Also note that the Twitter keys should be set in key.py
+
 If running Python 3.4, then there is a change that must be made in
 the tweepy/streaming.py script
 line 161:
@@ -15,9 +19,10 @@ self._buffer += self._stream.read(read_len).decode('UTF-8', 'ignore')
 line 171:
 self._buffer += self._stream.read(self._chunk_size).decode('UTF-8', 'ignore')
 
-The bot has a fatal bug that needs to be fixed.
-	1.  thx m8 <3
-		or
-	2.  xoxo lmao
+----------
+For PSU faculty
 
-caused it to crash and burn
+  All cdpdx[0-12] accounts are registered on tweetdelete.net for bi-weekly
+  deletion of tweets to re-run race
+
+  Use norrth.com/dmcleaner to manually delete Twitter DMs

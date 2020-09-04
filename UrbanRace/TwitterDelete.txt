@@ -1,4 +1,0 @@
-All cdpdx[0-12] accounts are registered on tweetdelete.net for bi-weekly
-deletion of tweets
-
-Use norrth.com/dmcleaner to manually delete Twitter DMs

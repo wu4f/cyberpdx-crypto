@@ -1,29 +1,37 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import tweepy, time, sys, json, os
+import key as k
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+import challenges as c
 
 #enter the corresponding information from your Twitter application:
+CONSUMER_KEY = k.CONSUMER_KEY
+CONSUMER_SECRET = k.CONSUMER_SECRET
+ACCESS_KEY = k.ACCESS_KEY
+ACCESS_SECRET = k.ACCESS_SECRET
 
-CONSUMER_KEY = ''
-CONSUMER_SECRET = ''
-ACCESS_KEY = ''
-ACCESS_SECRET = ''
+#get the solutions to urban challenges and url for final image
+s1=c.u1s
+s2=c.u2s
+s3=c.u3s
+s4=c.u4s
+s5=c.u5s
+s6=c.u6s
 
 class StdOutListener(StreamListener):
     def send_intro_message(self,dmsender):
         time.sleep(3)
-        msg="Hey. Thanks for the help. To get into the control room, I need the keys in the challenges I had Tris give you. Only Erudite are meant..."
-        self.send_msg(dmsender,msg)
-        time.sleep(3)
-        msg="to solve them since it requires knowledge of the campus. The system only allows 10 incorrect guesses so be careful.  What is key one?"
+        msg="Thanks for the help. To get into the control room, I need the keys in the challenges I had Tris give you. Only Erudite are meant to solve them since it requires knowledge of the campus. The system only allows 10 incorrect guesses so be careful.  What is key one?"
         self.send_msg(dmsender,msg)
         return True
 
     def send_msg(self,dmsender,msg):
         time.sleep(2)
+        msg = "@"+dmsender+" "+msg
         print("Sending " + dmsender + " the message " + msg)
         api.send_direct_message(screen_name=dmsender,text=msg)
         print("Done sending")
@@ -84,57 +92,57 @@ class StdOutListener(StreamListener):
                 if (lives == 0):
                     self.send_msg(dmsender,"AutoResponse: Off pursuing Plan B.  Thanks for your help.")
                     return True
-            if os.path.exists(dmsender+"/TECOTOSH"):
-                self.send_msg(dmsender,"That's it.  You're done. Go Home!")
+            if os.path.exists(dmsender+"/"+s6):
+                self.send_msg(dmsender,"AutoResponse: Thanks again.  I'm busy escaping now!")
                 return True
-            if os.path.exists(dmsender+"/BLACKSTONE"):
-                if "TECOTOSH" in dmtext:
-                    open(dmsender+"/TECOTOSH", 'w').close()
+            if os.path.exists(dmsender+"/"+s5):
+                if s6 in dmtext:
+                    open(dmsender+"/"+s6, 'w').close()
                     self.send_msg(dmsender,"You did it! It's unlocked. I'm shutting it down.  Thank you for all of your help!")
-                    if not os.path.exists("TECOTOSH"):
-                        open("TECOTOSH", 'w').close()
+                    if not os.path.exists(s6):
+                        open(s6, 'w').close()
                         time.sleep(3)
                         self.send_msg(dmsender,"I'm leaving you a little something as a thank you.  I think you can figure out where to get it! " + " http://goo.gl/N5Fd80 ")
                 else:
                     msg = self.get_incorrect_message(dmsender,lives) + "  Key six?"
                     self.send_msg(dmsender,msg)
                 return True
-            if os.path.exists(dmsender+"/FREEDOM"):
-                if "BLACKSTONE" in dmtext:
+            if os.path.exists(dmsender+"/"+s4):
+                if s5 in dmtext:
                     self.send_msg(dmsender,"Got it.  One more key to go!  So close now.  Send me the sixth key.")
-                    open(dmsender+"/BLACKSTONE", 'w').close()
+                    open(dmsender+"/"+s5, 'w').close()
                 else:
                     msg = self.get_incorrect_message(dmsender,lives) + "  Key five? "
                     self.send_msg(dmsender,msg)
                 return True
-            if os.path.exists(dmsender+"/GREEN"):
-                if "FREEDOM" in dmtext:
+            if os.path.exists(dmsender+"/"+s3):
+                if s4 in dmtext:
                     self.send_msg(dmsender,"Correct.  Two more keys left.  What is key five?")
-                    open(dmsender+"/FREEDOM", 'w').close()
+                    open(dmsender+"/"+s4, 'w').close()
                 else:
                     msg = self.get_incorrect_message(dmsender,lives) + "  Key four?"
                     self.send_msg(dmsender,msg)
                 return True
-            if os.path.exists(dmsender+"/AUTZEN"):
-                if "GREEN" in dmtext:
+            if os.path.exists(dmsender+"/"+s2):
+                if s3 in dmtext:
                     self.send_msg(dmsender,"Yes!  That worked.  Halfway there.  What is key four?")
-                    open(dmsender+"/GREEN", 'w').close()
+                    open(dmsender+"/"+s3, 'w').close()
                 else:
                     msg = self.get_incorrect_message(dmsender,lives) + "  Key three?"
                     self.send_msg(dmsender,msg)
                 return True
-            if os.path.exists(dmsender+"/DANNY"):
-                if "AUTZEN" in dmtext:
+            if os.path.exists(dmsender+"/"+s1):
+                if s2 in dmtext:
                     self.send_msg(dmsender,"Right!  On to the third key.")
-                    open(dmsender+"/AUTZEN", 'w').close()
+                    open(dmsender+"/"+s2, 'w').close()
                 else:
                     msg = self.get_incorrect_message(dmsender,lives) + "  Key two?"
                     self.send_msg(dmsender,msg)
                 return True
             else:
-                if "DANNY" in dmtext:
+                if s1 in dmtext:
                     self.send_msg(dmsender,"You got it.  Now give me the second key.")
-                    open(dmsender+"/DANNY", 'w').close()
+                    open(dmsender+"/"+s1, 'w').close()
                 else:
                     msg = self.get_incorrect_message(dmsender,lives) + "  Key one?"
                     self.send_msg(dmsender,msg)
