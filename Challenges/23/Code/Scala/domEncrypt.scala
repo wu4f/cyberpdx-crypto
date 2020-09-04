@@ -10,13 +10,13 @@ import scala.util.Random
 val rand = new Random()
 
 def readGraph: Array[List[Int]] = {
-  val n: Int = readInt   // How many nodes
-  val e: Int = readInt   // How many edges
+  val n: Int = scala.io.StdIn.readLine.toInt   // How many nodes
+  val e: Int = scala.io.StdIn.readLine.toInt   // How many edges
   val graph = Array.fill(n)(List[Int]())
 
   for (i <- 0 until e) {
     // Read in the end points of the edge
-    val line = readLine.split(" ").map(_.toInt)
+    val line = scala.io.StdIn.readLine.split(" ").map(_.toInt)
     val (a,b) = (line(0), line(1))
 
     // And add it to the graph (for ease making it symmetric)

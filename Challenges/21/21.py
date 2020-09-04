@@ -7,8 +7,8 @@
 # This script generates alternate QR code and modifies scytale.txt with
 #   message (It reuses all other initial files)
 #
-import pyqrcode
-qr_url="http://goo.gl/XxDJKB"
+import pyqrcode, os
+qr_url="https://goo.gl/OpQU25"
 s="the key for number twenty one is dropbobby"
 estring=pyqrcode.create(qr_url)
 estring.svg('21_final.svg',scale=8)
@@ -17,8 +17,12 @@ f=s[0::5]+s[1::5]+s[2::5]+s[3::5]+s[4::5]
 outfile=open("static/scytale.txt","w")
 outfile.write(f+"\n")
 outfile.close()
-hex_url="http://goo.gl/m9xBkb"
+hex_url="https://goo.gl/bux7yl"
 m=''.join(hex(ord(n))[2:].ljust(3,' ') for n in hex_url)
 u=open("static/url.txt","w+")
 u.write(m+"\n")
 u.close()
+s="Try this URL instead: http://crypto.cyberpdx.org/static/scytale.txt"
+command='exiftool -ImageDescription="'+s+'" static/tables.jpg'
+command='exiftool -Description="'+s+'" static/tables.jpg'
+os.system(command)

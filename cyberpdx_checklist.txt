@@ -1,0 +1,31 @@
+Update web site to switch over to camp site
+
+Get all notebooks charged
+
+
+Crypto
+------
+Diary
+  Update enigma key date
+  Update RACE_DAY in explode_and_encrypt.zsh and generate new diary.zip
+  Copy diary.zip to ../../www/static/diary.zip then add to repo
+  Run git pull on web site
+  Copy diary to USB keys
+Lecture
+  Print handouts
+     Day1LectureHandouts.docx
+     Day2LectureHandouts.odt
+     Day2VigenereTableHandout.pptx
+     Day2dailykeys2018.pdf
+     Day3LectureGraphHandout.pdf
+     Day3HomeworkGraph.pdf
+     Day3IceCreamRaceActivity.pdf
+  Sequence them for stapling ease (via grouping)
+CTF
+  Print Challenges.docx (with nums this time?)
+  Print IntroLetter.docx on yellow paper
+Table placards
+  Print out from cyberpdx_www/cybercamp
+Twitter
+  Clear out Twitter DMs
+  Test twitter bot

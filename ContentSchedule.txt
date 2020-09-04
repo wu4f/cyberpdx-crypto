@@ -1,0 +1,31 @@
+Why of CyberPDX?
+  Placards for teams from cyberpdx_www/cybercamp
+
+Crypto 1:
+  Placards for teams from cyberpdx_www/cybercamp
+  Challenges 1-5 (Challenges)
+  Tris Letter (Challenges/00_Letters_Figures)
+  USB stick (Challenges/Diary)
+  Day1LectureHandouts (LectureHandouts/Day1Handouts)
+
+Crypto 2:
+  Placards for teams from cyberpdx_www/cybercamp
+  Challenges 6-11, Wheel
+  Day2LectureHandouts
+  Day2VigenereTableHandout
+  Day2dailykeys (generate new via update to /static/dailykeys.html and print
+
+Crypto 3:
+  Challenges 12-18
+  Day3Handouts/Day3HomeworkGraph
+  Day3Handouts/Day3LectureGraphHandout
+  Day3Handouts/Day3IceCreamRaceActivity
+  Pasta/Green&Red
+
+Crypto 4:
+  Challenges 19-24
+  Envelopes, note cards
+
+Urban Race:
+  Letter from Tris
+  Challenges

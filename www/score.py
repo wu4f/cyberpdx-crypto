@@ -13,9 +13,9 @@ class Score(flask.views.MethodView):
         for user in users.keys():
             if user is 'wuchang':
                 continue
-            userdir = "static/" + user + "/";
+            userdir = "static/obj/" + user + "/";
             if not os.path.exists(userdir):
-                os.mkdir(userdir)
+                os.makedirs(userdir)
             scores[user] = []
             teamnames[user] = users[user][1]
             for c in sorted(challenges.keys()):

@@ -4,21 +4,23 @@ u1s = "YANKEE"
 u2c = "For key two, across the avenue from the cafe on sixth and jackson, what bird flies?"
 u2s = "SWIFT"
 
-u3c = "For key three find the poet on the walk of heroines who predicted we would think of her"
-u3s = "SAPPHO"
+u3c = "For key three go to the walk of heroines and find out what Rosa thinks you get when you think differently"
+u3s = "FREEDOM"
 
-u4c = "For key four find what was built for joyce by the clocks at the urban center plaza"
-u4s = "FOUNTAIN"
+# No commas allowed
+u4c = "For key four look up under the bridge across cramer and smith then tell me what you think"
+u4s = "GREEN"
 
-u5c = "For key five, on the park side of Lincoln, members of Delta Tau Rho commemorate this college."
-u5s = "VANPORT"
+u5c = "For key five, two pharoahs guard it on a building across the park from Smith."
+u5s = "BLACKSTONE"
 
-u6c = "For key six, find what Don built here"
-u6latdeg='45.51133'
+# No commas allowed
+u6c = "For key six find out what the Carpenter built here"
+u6latdeg='45.509238'
 u6latref='N'
-u6longdeg='122.6854'
+u6longdeg='122.681360'
 u6longref='W'
-u6s = "HOLON"
+u6s = "TECOTOSH"
 
 u7latdeg='45.512306'
 u7latref='N'
@@ -28,5 +30,7 @@ u7s='http://goo.gl/N5Fd80'
 
 mu1c = "For key one, who are 'the ones' on the stone benches outside of Epler's Hall?"
 mu1s = "STUDENTS"
-mu2c = "For key two, go to the Walk Of Heroines and find out what Rosa thinks you get when you think differently"
-mu2s = "FREEDOM"
+#mu2c = "For key two, go to the Walk Of Heroines and find out what Rosa thinks you get when you think differently"
+#mu2s = "FREEDOM"
+mu2c = "For key two, on a bench on the Walk Of Heroines and find out the two things Mae is caught between"
+mu2s = "EVILS"

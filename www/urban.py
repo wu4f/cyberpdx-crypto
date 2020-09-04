@@ -8,9 +8,9 @@ class Urban(flask.views.MethodView):
     @login_required
     def get(self):
         status=0
-        userdir = "static/" + flask.session['username'] + "/"
+        userdir = "static/obj/" + flask.session['username'] + "/"
         if not os.path.exists(userdir):
-            os.mkdir(userdir)
+            os.makedirs(userdir)
         if os.path.exists(userdir+"final.txt"):
             status=1
         return flask.render_template('urban.html', solved=status)
@@ -26,7 +26,7 @@ class Urban(flask.views.MethodView):
             if r not in flask.request.form:
                 flask.flash("Error: {0} is required.".format(r))
                 return flask.redirect(flask.url_for('urban'))
-        path = "static/"
+        path = "static/obj/"
         username = flask.session['username']
         guess = flask.request.form['guess']
         if os.path.isfile(path+username+"/final.txt"):
@@ -40,7 +40,7 @@ class Urban(flask.views.MethodView):
         if (numright == 6):
             flask.flash("Correct.  Congratulations.  You have completed the race")
             if not os.path.exists(path+"logs/"):
-                os.mkdir(path+"logs/")
+                os.makedirs(path+"logs/")
             logfilename = path + "logs/final.log"
             logfile = open(logfilename,"ab+")
             rank=len(logfile.readlines())+1

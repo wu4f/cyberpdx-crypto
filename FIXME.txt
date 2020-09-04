@@ -1,0 +1,6 @@
+Remove relative dates...Using 0x22 (34) for Urban race day on the 13th
+broke 2018
+
+Add Shodan to diary
+
+Remove nessus and other commercial tools?

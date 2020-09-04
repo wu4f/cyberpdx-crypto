@@ -102,7 +102,7 @@ class StdOutListener(StreamListener):
                     if not os.path.exists(s6):
                         open(s6, 'w').close()
                         time.sleep(3)
-                        self.send_msg(dmsender,"I'm leaving you a little something as a thank you.  I think you can figure out where to get it! " + " http://goo.gl/N5Fd80 ")
+                        self.send_msg(dmsender,"I'm leaving you a little something as a thank you.  I think you can figure out where to get it! " + " https://goo.gl/Rz1v9v ")
                 else:
                     msg = self.get_incorrect_message(dmsender,lives) + "  Key six?"
                     self.send_msg(dmsender,msg)

@@ -1,0 +1,12 @@
+input#shift
+{
+        background-color: #bebbbb;
+        border: none; 
+        position: absolute;
+        left: 230px;
+        top: 230px;
+        width: 80px;
+        font-size: 3.0em;
+        color: #666666;
+        padding: 1px;
+}

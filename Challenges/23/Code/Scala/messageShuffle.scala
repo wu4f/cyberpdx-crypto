@@ -17,7 +17,7 @@ def mix(w: String): String = {
 }
 
 // Read in the message and split into words
-val words = readLine.filter(x=>(x.isLetter || x == ' ')).split(' ')
+val words = scala.io.StdIn.readLine.filter(x=>(x.isLetter || x == ' ')).split(' ')
 println("Scrambling: " + words.mkString(" "))
 for (w <- words) {
   print(mix(w) + " ")

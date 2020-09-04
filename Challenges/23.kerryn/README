@@ -1,0 +1,19 @@
+# This is a custom level generated manually
+#  23_part1.sh -> manual edit of arr -> 23_part2.sh -> yEd on graphml images
+#    -> splice to final
+#Step 1:
+#  Create the graph manually (using yEd for example)
+#  Save the public key version as MessageBlank.graphml
+#    It will need to have each node labelled as N0, N1, ... N#
+#  Enter in the graph into simple text format... see an example for illustration.
+#    Call it graphInput.txt
+#
+#Step 2:
+#  Modify 23_part1.sh to use the password you want.
+#
+#Step 3:
+#  Edit the 23_part2.sh program to use the Enc output from the worksheet in
+#    23_part1_output.txt.
+#  Remember to change the length in for loop to match message length
+#  (A bit of a pain but not too bad)  Could be made cleaner.
+#  This should mostly do it.

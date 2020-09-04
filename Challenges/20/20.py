@@ -12,7 +12,7 @@ from enigma.machine import EnigmaMachine
 s="the key for number twenty is rapidseven in lowercase"
 key='EXPLOIT'
 descstr="Use "+key+" to decode: "
-url="goo.gl/qfNWSH"
+url="goo.gl/7WQrlb"
 binstrurl=''.join([ (" {num:08b}".format(num=ord(c))+"\n") for c in url])
 ofile=open("20_final.txt","w+")
 ofile.write(binstrurl)

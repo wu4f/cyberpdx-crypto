@@ -3,17 +3,17 @@ import flask, flask.views
 import os
 
 users = {
-        'wuchang': ['9999', 'Wu'],
+       'wuchang': ['9999', 'Wu'],
         'cdpdx1': ['znuwha01', 'Capital'],
-        'cdpdx2': ['rpibdf02', 'Cleveland'],
         'cdpdx3': ['ioknjl03', 'Lincoln'],
         'cdpdx4': ['alnqkc04', 'Madison'],
         'cdpdx5': ['fzwvsq05', 'Skyview'],
         'cdpdx6': ['yxehal06', 'St.Marys'],
         'cdpdx7': ['okavsg07', 'SST'],
-        'cdpdx8': ['bvzghp08', 'Tigard'],
         'cdpdx9': ['qrghpt09', 'Tualatin'],
-        'cdpdx10': ['puxstq10', 'Village']
+        'cdpdx10': ['puxstq10', 'Village'],
+        'cdpdx11': ['uxstqp11', 'OregonCity'],
+        'cdpdx12': ['xstpuq12', 'ParkRoseGrant']
 }
 
 class Login(flask.views.MethodView):
@@ -33,9 +33,9 @@ class Login(flask.views.MethodView):
         passwd = flask.request.form['passwd']
         if username in users and users[username][0] == passwd:
             flask.session['username'] = username
-            userdir = "static/" + flask.session['username']
+            userdir = "static/obj/" + flask.session['username']
             if not os.path.exists(userdir):
-                os.mkdir(userdir)
+                os.makedirs(userdir)
         else:
             flask.flash("Username doesn't exist or incorrect password")
         return flask.redirect(flask.url_for('main'))

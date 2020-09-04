@@ -1,38 +1,9 @@
-This is the source distribution for the challenges and urban race used in CyberPDX at Portland State University in 2016.
+This is the source distribution for the challenges and urban race used in CyberPDX at Portland State University.
 
 Challenges/      => Directory containing the first 24 puzzles
 LectureHandouts/ => For the examples in class
 UrbanRace/       => Urban Race puzzles and the Twitter bot used to run race
 www/             => Web site for handling puzzle solutions
-
-To setup the web site:
-Clone the git repository into a place that you will run from.  For example,
-/var/www/html.  If you don't have git....
-        sudo apt-get install git
-        cd /var/www/html
-        git clone https://<username>@bitbucket.org/wuchangfeng/cyberd_crypto_2016.git
-                or
-        git clone https://<username>@bitbucket.org/wuchangfeng/cyberd_crypto_2016.git <dirname>
-
-The files assume that <dirname> is cyberd.
-
-To ensure all of the necessary software is available, install the following
-packages and the extras it asks for.  They are necessary for 32-bit compiling,
-the unpacking challenges, and the Python-Flask web interface....
-        sudo apt-get install python-pip
-        sudo apt-get install python-virtualenv
-        sudo apt-get install libapache2-mod-wsgi
-	sudo apt-get install libimage-exiftool-perl
-To create the Python virtualenv, do:
-        cd www
-        mkdir env
-        virtualenv env
-        source env/bin/activate
-
-Within the environment, install flask, lockfile, and pexpect using
-these commands...
-        pip install flask
-        pip install lockfile
 
 For generating the challenges, also install the following:
 	pip install pillow	(3.2.0)
@@ -40,22 +11,24 @@ For generating the challenges, also install the following:
 	pip install py-enigma	(0.1)
 	pip install PyQRCode	(1.2.1)
 	pip install pyBarcode	(0.7)
+	pip install pypng	(0.0.18)
 
-To configure the web site,
-        Edit www/login.py to configure users and passwords (Apologies in advance for this.
-             Would love to do something more clever like OAuth here)
-        Move www/etc/apache2/sites-available/cyberd.conf to the appropriate
-                place (/etc/apache2/sites-available/cyberd.conf) and
-                edit the file to reflect your local configuration
-                (i.e. ServerName, ServerAlias, WSGI path settings)
-        Edit www/app.wsgi to point to where your web files are
+To configure the web site, the installation script will integrate the
+application with nginx via uwsgi, then obtain a TLS certificate from Let's
+Encrypt.  To install:
 
-        Enable the site
-                sudo a2enmod wsgi (if necessary)
-                sudo a2ensite cyberd
-                sudo service apache2 restart
+1. Bring up a Ubuntu 18.04 instance.
 
-        If you have permission errors, ensure that your directories
-                are readable by apache2 (www-data)
+2. Point the DNS name you'd like to use to the IP address of the instance.
+
+3. Clone this repository and rename the directory.
+
+4. cd into directory
+
+5. sudo ./install.sh <dns_name>
+
+6. Edit www/login.py to configure users and passwords
+
+7. Restart systemctl service to load new users
 
 If you have any questions, wuchang at pdx.edu

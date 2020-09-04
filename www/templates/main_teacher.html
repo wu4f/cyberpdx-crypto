@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block body %}
+	{% if 'username' in session %}
+		<p>Logged in as: {{session['username']}}</p>
+	{% else %}
+		<!-- <p>This is the scoring site for the cryptographic challenges of CyberPDX.</p>
+		<p>Your user login and password are in LastPass</p> <p>Please <a href="{{url_for('login')}}">login</a></p>-->
+	{% endif %}
+Links to Prezi lectures:
+<!-- <a href="https://prezi.com/cr-xpdcx9um_/cyberpdx-introduction/">CybePDX intro</a> | -->
+<a href="http://prezi.com/yoloye-tbkmc">Encoding</a> | <a href="http://prezi.com/skfcst7npbrx">Simple Ciphers</a> | <a href="http://prezi.com/lvzemkrf-ryh">Modern Ciphers</a> | <a href="https://docs.google.com/presentation/d/1sCW9T_YaZlR4L6lohpUidJradUu-WuCsoyB19abXFwE">Teaching Yubikeys</a> | <a href="https://docs.google.com/presentation/d/1GVV1pTBldrSVBG8azk3GwpH7vmQtlPZZ6fy3ufbreow">Build Your Own Crypto Race</a>
+<br>
+<!-- | <a href="http://crypto.cyberpdx.org/static/NetWorkProtocolsLecture4.pptx">Protocols</a> | <a href="https://prezi.com/8e8arujv41ru/cyberpdx-its-a-wrap/">CyberPDX wrap-up</a>-->
+<!--Screencasts of Prezi lectures: <a href="https://www.youtube.com/playlist?list=PLdCTMpWhMq8LnjFZPXAEkp8BKa6m2EtQo">Playlist</a><br>-->
+
+Lecture handouts: <a href="http://crypto.cyberpdx.org/static/Day1LectureHandouts.pdf">Encoding</a> | <a href="http://crypto.cyberpdx.org/static/Day2LectureHandouts.pdf">Simple Ciphers</a> | <a href="http://crypto.cyberpdx.org/static/Day3LectureHandouts.pdf">Modern Ciphers</a> with homework <a href="http://crypto.cyberpdx.org/static/HomeworkGraph.pdf">graph</a> and <a href="http://crypto.cyberpdx.org/static/HomeworkGraphSolution.pdf">solution</a><br>
+
+Four's Crypto Clues: <a href="http://crypto.cyberpdx.org/static/IntroLetter.pdf">Tris intro</a> | <a href="http://crypto.cyberpdx.org/static/Challenges.pdf">Challenges</a> | <a href="http://crypto.cyberpdx.org/static/dailykeys.html">Enigma Keys</a> | <a href="http://crypto.cyberpdx.org/static/caesarWheel">Caesar wheel</a><br>
+
+<hr>
+Four's diary entries<br>
+Encoding: <a href="http://crypto.cyberpdx.org/static/diary/01.pdf">1</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/02.pdf">2</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/03.pdf">3</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/04.pdf">4</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/05.pdf">5</a><br>
+Simple Ciphers: <a href="http://crypto.cyberpdx.org/static/diary/06.pdf">6</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/07.pdf">7</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/08.pdf">8</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/09.pdf">9</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/10.pdf">10</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/11.pdf">11</a><br>
+Encoding+Simple Ciphers:
+<a href="http://crypto.cyberpdx.org/static/diary/12.pdf">12</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/13.pdf">13</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/14.pdf">14</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/15.pdf">15</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/16.pdf">16</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/17.pdf">17</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/18.pdf">18</a><br>
+All: <a href="http://crypto.cyberpdx.org/static/diary/19.pdf">19</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/20.pdf">20</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/21.pdf">21</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/22.pdf">22</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/23.pdf">23</a> |
+<a href="http://crypto.cyberpdx.org/static/diary/24.pdf">24</a><br>
+Miscelleny: 
+<a href="http://crypto.cyberpdx.org/static/diary.zip">Zip of all entries</a> | 
+<a href="https://www.youtube.com/playlist?list=PLdCTMpWhMq8JGp6r7TFZiiCLxXHUt2HKy">Solutions</a><br>
+<hr>
+
+Crypto race repl.its: <a href="https://repl.it/@wuchang/minirace1">#1</a> | <a href="https://repl.it/@wuchang/minirace2">#2</a><br>
+
+Resources: <a href="https://upload.wikimedia.org/wikipedia/commons/d/dd/ASCII-Table.svg">ASCII</a> | <a href="http://www.limited-entropy.com/wp-content/uploads/2009/03/vigenere_square.png">Vigenere Table</a> | <a href="http://exif.regex.info/">EXIF metadata tool</a> | <a href="https://cryptii.com/pipes/enigma-machine">Enigma emulator</a> | Caesar wheel image <a href="http://crypto.cyberpdx.org/static/wheel.png">png</a>,<a href="http://crypto.cyberpdx.org/static/wheel.psd">psd</a><br>
+
+About this curriculum <a href="http://www.thefengs.com/wuchang/papers/feng16divergent.pdf">2016 USENIX ASE paper</a> | <a href="https://prezi.com/c7zuu-48tnfg/a-divergent-themed-capture-the-flag-and-urban-race/">Prezi</a> <br>
+
+	{% with messages = get_flashed_messages() %}
+			{% for message in messages %}
+{{message}}
+			{% endfor %}
+		</pre>
+	{% endwith %}
+{% endblock %}
+

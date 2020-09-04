@@ -1,0 +1,53 @@
+1a.  Substitution
+  cipher = krblqtfdwzinoyvhejcsxgupma
+
+  put your best cryptographer on this challenge
+  hxs mvxj rqcs bjmhsvfjkhdqj vy sdwc bdknnqyfq
+
+  sdq twjcs uvjl vt sdq bkqckj oqcckfq wc jqhnkbq
+  the first word in the caesar message is replace
+  --
+    t   u  b      y      p    o   hi    a l  g
+  hxs mvxj rqcs bjmhsvfjkhdqj vy sdwc bdknnqyfq
+
+      f     w
+  sdq twjcs uvjl vt sdq bkqckj oqcckfq wc jqhnkbq
+  --
+
+1b.  Caesar
+
+replace the blank in the url with bars in lowercase
+
+1c.  http://crypto.cyberpdx.org/static/________.jpg
+
+
+Step1.
+    Generate http://cyberpdx.oregonctf.org/static/bars.jpg  via u6_bars.py
+    Barcode to decimal (goo.gl/xsLmTU)
+    Points to static/ccvqr.png
+
+Step2.
+   Generate static/ccvqr.png that points to
+   http://cyberpdx.oregonctf.org/static/ccv.jpg
+
+Step3
+  Generate composite puzzle image static/ccv.jpg
+  --> columnar  DUTCHthevigenerekeyyouarelookingforisroot
+  --> vign==>   themessagebelowisfromenigmayesterday
+  --> enigma(USETHEWORDCONCRETEINLOWERCASETOFILLINTHEBLANKINTHEURL)
+  http://cyberpdx.oregonctf.org/static/________.jpg
+
+Step4
+ Image with puzzle on it...to steg info
+  >>> s="scytale this"
+  >>> t=''.join([" "+str(hex(ord(c))[2:]) for c in s])
+  '73 63 79 74 61 6c 65 20 74 68 69 73'
+
+  Example: ForKeySixFindOutWhatTheCarpenterBuiltHere
+           FSdaaetoiOtrrHrxuTpBeKFtheureiWenieynhCtl
+
+  GPS in concrete image.  Answer->
+
+Step5
+   When twitter bot gets last key, a URL is given with photo whose GPS
+   coordinates is the prize
