@@ -4,7 +4,7 @@
 		<p>Logged in as: {{session['username']}}</p>
 	{% else %}
 		<p>This is the scoring site for the cryptographic challenges of CyberPDX.</p>
-		<p>Use the login and password provided to <a href="{{url_for('login')}}">login</a>. Demo account is (cyberpdx:crypto).</p>
+		<p>Use the login and password provided to <a href="{{url_for('login')}}">login</a></p>
 	{% endif %}
 	<hr>
 	Links to Prezi lectures:
@@ -58,6 +58,7 @@ All: <a href="http://crypto.cyberpdx.org/static/diary/19.pdf">19</a> |
 Resources: <a href="https://upload.wikimedia.org/wikipedia/commons/d/dd/ASCII-Table.svg">ASCII</a> | <a href="http://www.limited-entropy.com/wp-content/uploads/2009/03/vigenere_square.png">Vigenere Table</a> | <a href="http://exif.regex.info/">EXIF metadata tool</a> | <a href="https://cryptii.com/pipes/enigma-machine">Enigma emulator</a> | Caesar wheel image <a href="http://crypto.cyberpdx.org/static/wheel.png">png</a>,<a href="http://crypto.cyberpdx.org/static/wheel.psd">psd</a><br>
 
 About this curriculum <a href="http://www.thefengs.com/wuchang/papers/feng16divergent.pdf">2016 USENIX ASE paper</a> | <a href="https://prezi.com/c7zuu-48tnfg/a-divergent-themed-capture-the-flag-and-urban-race/">Prezi</a> <br>
+
 	{% with messages = get_flashed_messages() %}
 			{% for message in messages %}
 {{message}}
