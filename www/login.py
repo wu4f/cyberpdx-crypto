@@ -3,7 +3,8 @@ import flask, flask.views
 import os
 
 users = {
-       'wuchang': ['9999', 'Wu'],
+        'wuchang': ['9999', 'Wu'],
+        'cyberpdx': ['crypto', 'Demo'],
         'cdpdx1': ['znuwha01', 'Capital'],
         'cdpdx3': ['ioknjl03', 'Lincoln'],
         'cdpdx4': ['alnqkc04', 'Madison'],
