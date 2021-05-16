@@ -9,7 +9,8 @@ class Score(flask.views.MethodView):
     @login_required
     def get(self):
         scores = {}
-        for user in users.keys():
+        myusers = Users()
+        for user in myusers.dumpUsers():
             if user is 'wuchang':
                 continue
             userdir = "static/obj/" + user + "/";

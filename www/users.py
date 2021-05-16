@@ -43,7 +43,7 @@ class Users():
 
     def initializeUsers(self):
         cursor = self.connection.cursor()
-        cursor.execute("create table users (username text, realname text, passhash text)")
+        cursor.execute("create table users (username text, passhash text)")
         self.addUser('admin', settings.admin_pass)
         for i in range(10):
             self.addUser(f'demo{i}','malware')
@@ -63,7 +63,7 @@ class Users():
         if len(res) == 0:
             passhash = pbkdf2_sha256.hash(password)
             params = {'username':username, 'passhash':passhash}
-            #print(f'Adding {username} with name {realname}, password {password} and hash {passhash}')
+            print(f'Adding {username} with password {password} and hash {passhash}')
             cursor.execute("insert into users (username, passhash) VALUES (:username, :passhash)", params)
             self.connection.commit()
             subprocess.Popen(shlex.split(f'/bin/mkdir -p static/obj/{username}/solved'))
@@ -102,7 +102,7 @@ class Users():
         cursor = self.connection.cursor()
         cursor.execute("update users SET passhash = (:passhash) WHERE username=(:username)", params)
         self.connection.commit()
-        #print(f'Changing {username} with {password} and hash {passhash}')
+        print(f'Changing {username} with {password} and hash {passhash}')
         return True
 
     def importUsers(self, filename):
