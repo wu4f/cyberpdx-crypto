@@ -3,16 +3,16 @@
 <h2>Scoreboard</h2>
 <table class="score">
 <tr>
-	<td>Team</td>
+	<td>User</td>
 	{% for c in challenges %}
 	<td>{{c}}</td>
 	{% endfor %}
 	<td>Graph</td>
 </tr>
-{% for team in scores %}
+{% for user in scores %}
 <tr>
-	<td>{{team}}</td>
-	{% for s in scores[team] %}
+	<td>{{user}}</td>
+	{% for s in scores[user] %}
 	  {% if s > 10 %}
 	  <td class="green">
 		  {% elif s == 10 %}

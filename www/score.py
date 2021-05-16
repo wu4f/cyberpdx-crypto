@@ -9,7 +9,6 @@ class Score(flask.views.MethodView):
     @login_required
     def get(self):
         scores = {}
-        teamnames = {}
         for user in users.keys():
             if user is 'wuchang':
                 continue
@@ -17,7 +16,6 @@ class Score(flask.views.MethodView):
             if not os.path.exists(userdir):
                 os.makedirs(userdir)
             scores[user] = []
-            teamnames[user] = users[user][1]
             for c in sorted(challenges.keys()):
                 if os.path.isfile(userdir+c):
                     place = int(open(userdir+c,"r").readline().rstrip("\n"))
@@ -33,4 +31,4 @@ class Score(flask.views.MethodView):
                 scores[user].append(10)
             else:
                 scores[user].append(0)
-        return flask.render_template('score.html', scores=scores, teams=teamnames, challenges=sorted(challenges.keys()))
+        return flask.render_template('score.html', scores=scores, challenges=sorted(challenges.keys()))

@@ -44,11 +44,11 @@ class Users():
     def initializeUsers(self):
         cursor = self.connection.cursor()
         cursor.execute("create table users (username text, realname text, passhash text)")
-        self.addUser('admin','Administrator',settings.admin_pass)
+        self.addUser('admin', settings.admin_pass)
         for i in range(10):
-            self.addUser(f'demo{i}',f'Demo {i}','malware')
+            self.addUser(f'demo{i}','malware')
 
-    def addUser(self, username, realname, password):
+    def addUser(self, username, password):
         """
         Checks to see user does not exist, then adds user
         Each row contains: name, email, date, message
@@ -62,16 +62,11 @@ class Users():
         res = cursor.fetchall()
         if len(res) == 0:
             passhash = pbkdf2_sha256.hash(password)
-            params = {'username':username, 'realname':realname,'passhash':passhash}
+            params = {'username':username, 'passhash':passhash}
             #print(f'Adding {username} with name {realname}, password {password} and hash {passhash}')
-            cursor.execute("insert into users (username, realname, passhash) VALUES (:username, :realname, :passhash)", params)
+            cursor.execute("insert into users (username, passhash) VALUES (:username, :passhash)", params)
             self.connection.commit()
             subprocess.Popen(shlex.split(f'/bin/mkdir -p static/obj/{username}/solved'))
-            if username is 'admin':
-                p = subprocess.Popen(shlex.split(f'/bin/bash adduser.sh {sleeptime} {settings.src} {username}'))
-                p.wait()
-            else:
-                subprocess.Popen(shlex.split(f'/bin/bash adduser.sh {sleeptime} {settings.src} {username}'))
             return True
         else:
             return False
