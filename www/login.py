@@ -1,21 +1,7 @@
 #!/usr/bin/env python
 import flask, flask.views
 import os
-
-users = {
-        'wuchang': ['9999', 'Wu'],
-        'cyberpdx': ['crypto', 'Demo'],
-        'cdpdx1': ['znuwha01', 'Capital'],
-        'cdpdx3': ['ioknjl03', 'Lincoln'],
-        'cdpdx4': ['alnqkc04', 'Madison'],
-        'cdpdx5': ['fzwvsq05', 'Skyview'],
-        'cdpdx6': ['yxehal06', 'St.Marys'],
-        'cdpdx7': ['okavsg07', 'SST'],
-        'cdpdx9': ['qrghpt09', 'Tualatin'],
-        'cdpdx10': ['puxstq10', 'Village'],
-        'cdpdx11': ['uxstqp11', 'OregonCity'],
-        'cdpdx12': ['xstpuq12', 'ParkRoseGrant']
-}
+from users import Users
 
 class Login(flask.views.MethodView):
     def get(self):
@@ -32,7 +18,8 @@ class Login(flask.views.MethodView):
                 return flask.redirect(flask.url_for('main'))
         username = flask.request.form['username']
         passwd = flask.request.form['passwd']
-        if username in users and users[username][0] == passwd:
+        myusers = Users()
+        if myusers.checkUser(username, passwd):
             flask.session['username'] = username
             userdir = "static/obj/" + flask.session['username']
             if not os.path.exists(userdir):
