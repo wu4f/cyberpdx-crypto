@@ -1,6 +1,6 @@
 import flask, flask.views
 from utils import login_required
-from login import users
+from users import Users
 from lockfile import locked
 import os
 import time

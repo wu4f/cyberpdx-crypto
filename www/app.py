@@ -3,10 +3,8 @@ import flask
 import settings
 from main import Main
 from login import Login
-from karma import Karma
 from solve import Solve
 from score import Score
-from urban import Urban
 
 app = flask.Flask(__name__)
 
@@ -20,16 +18,8 @@ app.add_url_rule('/login/',
                  view_func=Login.as_view('login'),
                  methods=['GET', 'POST'])
 
-app.add_url_rule('/karma/',
-                 view_func=Karma.as_view('karma'),
-                 methods=["GET", "POST"])
-
 app.add_url_rule('/solve/',
                  view_func=Solve.as_view('solve'),
-                 methods=["GET", "POST"])
-
-app.add_url_rule('/urban/',
-                 view_func=Urban.as_view('urban'),
                  methods=["GET", "POST"])
 
 app.add_url_rule('/score/',

@@ -1,7 +1,7 @@
 import flask, flask.views
 from utils import login_required
 from solve import challenges
-from login import users
+from users import Users
 import os
 import time
 
