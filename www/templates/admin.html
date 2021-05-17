@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+<center>
+	<div class="admin">
+	{% if session['username'] == 'admin' %}
+	<form action="{{url_for('admin')}}" method="POST" enctype="multipart/form-data">
+	      Upload a CSV file of new users to add<br>
+	      <input type="file" name="file" /><br>
+	      <input type="submit" name="action" value="Upload"><br><br>
+	      <hr><br>
+	      Change password for a user<br>
+	      Username: <input type="text" name="username" maxlength="16" /><br>
+	      Password: <input type="text" name="password" maxlength="16" /><br>
+	      <input type="submit" name="action" value="Change Password"><br><br>
+	      <hr>
+	      <p style="margin: 500px 5px 500px 5px">
+	      Reset CTF and remove all user accounts (CAUTION!!!!)<br>
+	      <input type="submit" name="action" value="Reset entire CTF"><br>
+	      </p>
+	</form>
+	{% else %}
+	        <p>Restricted access</p>
+	{% endif %}
+	</div>
+</center>
+{% endblock %}
