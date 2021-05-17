@@ -11,4 +11,4 @@ else:
 if 'ADMIN_PASS' in os.environ:
     admin_pass = os.environ['ADMIN_PASS']
 else:
-    admin_pass = 'cyberpdx'
+    admin_pass = 'pdxctf'
