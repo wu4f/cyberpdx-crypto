@@ -188,6 +188,11 @@ table.score {
 }
 
 footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
     color:#fff;
     background:linear-gradient(90deg,#354005,#6A7F10, #354005);
 }
@@ -235,4 +240,16 @@ footer {
 }
 .lightgreen{
 	background-color: #D9D855;
+}
+.admin {
+    width:90%;
+    text-align: center;
+    float:none;
+    width:100%;
+}
+.admin form {
+   float:none;
+   /* margin-top:1rem;*/
+   margin:0 auto;
+   /*  margin-left:5rem; width:80%;*/
 }

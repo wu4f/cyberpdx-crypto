@@ -3,8 +3,8 @@
 	{% if 'username' in session %}
 		<p>Logged in as: {{session['username']}}</p>
 	{% else %}
-		<p>This is the scoring site for the cryptographic challenges of CyberPDX.</p>
-		<p>Use the login and password provided to <a href="{{url_for('login')}}">login</a>. Demo account is (cyberpdx:crypto).</p>
+		<p>Use the login and password provided to <a href="{{url_for('login')}}">login</a>.</p>
+		<p>Demo accounts are (demo0:demo0, demo1:demo1, etc.).</p>
 	{% endif %}
 	<hr>
 	Links to Crypto thread lectures:

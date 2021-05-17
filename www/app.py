@@ -5,10 +5,13 @@ from main import Main
 from login import Login
 from solve import Solve
 from score import Score
+from admin import Admin
 
 app = flask.Flask(__name__)
 
 app.secret_key = settings.secret_key
+app.config['UPLOAD_FOLDER'] = '/tmp/'
+app.config['MAX_CONTENT_PATH'] = 4096
 
 app.add_url_rule('/',
                  view_func=Main.as_view('main'),
@@ -25,6 +28,10 @@ app.add_url_rule('/solve/',
 app.add_url_rule('/score/',
                  view_func=Score.as_view('score'),
                  methods=["GET"])
+
+app.add_url_rule('/admin/',
+                 view_func=Admin.as_view('admin'),
+                 methods=['GET', 'POST'])
 
 app.add_url_rule('/<page>/',
                  view_func=Main.as_view('page'),
