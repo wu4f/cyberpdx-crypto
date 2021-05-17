@@ -19,7 +19,7 @@ class Admin(flask.views.MethodView):
             if filename.endswith('.csv'):
                 f.save(filename)
                 myusers.importUsers(filename)
-                flask.flash("Finished import. User binaries may not be available for several minutes.","ok")
+                flask.flash("Finished import.","ok")
             else:
                 flask.flash("Error: CSV file is required.","err")
         elif 'Reset' in flask.request.form['action']:

@@ -47,17 +47,17 @@
 
 </header>
 <section>
+	<div id="flashed">
+		<pre>
+		{% with messages = get_flashed_messages() %}
+		{% for message in messages %}
+			{{message}}
+		{% endfor %}
+		{% endwith %}
+		</pre>
+	</div>
 	<div id="content">
 		{% block body %} {% endblock %}
-	</div>
-	<div id="flashed">
-	<pre>
-	{% with messages = get_flashed_messages() %}
-	{% for message in messages %}
-		{{message}}
-	{% endfor %}
-	{% endwith %}
-	</pre>
 	</div>
 </section>
 <footer class="clearfix">
