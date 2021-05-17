@@ -43,10 +43,11 @@
 	{% endif %}
 	</div>
 	{% endblock %}
-
-
 </header>
 <section>
+	<div id="content">
+		{% block body %} {% endblock %}
+	</div>
 	<div id="flashed">
 		<pre>
 		{% with messages = get_flashed_messages() %}
@@ -55,9 +56,6 @@
 		{% endfor %}
 		{% endwith %}
 		</pre>
-	</div>
-	<div id="content">
-		{% block body %} {% endblock %}
 	</div>
 </section>
 <footer class="clearfix">
