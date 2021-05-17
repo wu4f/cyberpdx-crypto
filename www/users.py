@@ -124,6 +124,6 @@ class Users():
         """
         cursor = self.connection.cursor()
         cursor.execute("drop table users")
-        subprocess.Popen(shlex.split(f'/bin/rm -rf static/obj/*'))
+        subprocess.Popen(shlex.split(f'/bin/rm -rf static/obj'))
         self.initializeUsers()
         return True
