@@ -8,7 +8,7 @@
 # 3. Cut and paste every other word
 # 4. Do slideshow and take screenshot via VirtualBox and save image
 # 5. Crop in gimp
-s="for key two first fill the blank with brownies in lowercase"
+s="fill in the blank with brownies in lowercase"
 outfile=open('u2a_ForWindows.txt','w')
 outfile.write(s+"\n\n")
 alphabet='abcdefghijklmnopqrstuvwxyz '
